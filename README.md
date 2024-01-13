@@ -26,6 +26,26 @@ In cases where installing Tkinter on Deepnote is not feasible, consider reviewin
 
 Section 3: Natural Language Processing - Classifying Social Media Sentiment
 
+**Issue Summary:**
+
+While working with `pandas_profiling` in a Python environment, I encountered a compatibility issue related to the `pydantic` library. The error message indicated a `PydanticImportError`, stating that `BaseSettings` had been moved to the `pydantic-settings` package in `pydantic` version 2.5. This change led to a conflict with the existing `pandas_profiling` implementation, which seemed to rely on the older structure of `pydantic`.
+
+**Steps Taken:**
+
+1. **Updated Imports**: Attempted to update the import statement in my code to use `from pydantic_settings import BaseSettings` as per the new `pydantic` structure.
+
+2. **Library Updates**: Ensured that `pandas_profiling` was up to date, along with other related libraries like `ydata-profiling` and `pydantic`.
+
+3. **Dependency Conflict Investigation**: Utilized `pip show` to investigate the versions and dependencies of the involved libraries. Identified that `pandas_profiling` was the problematic library causing the `PydanticImportError`.
+
+4. **Attempted Alternatives**: Explored updating other related libraries, like `confection`, `spacy`, and `thinc`, which also depend on `pydantic`, to ensure compatibility with the newer version of `pydantic`.
+
+**Outcome:**
+
+Despite these efforts, the compatibility issue with `pandas_profiling` and `pydantic` could not be resolved. As a temporary workaround, the decision was made to comment out the problematic `pandas_profiling` code snippet and proceed with the exploratory data analysis, bypassing the use of `pandas_profiling` for the time being.
+
+This experience highlights the challenges of managing dependencies in Python environments, especially when dealing with rapidly evolving libraries. Future updates to these libraries may resolve this issue, and revisiting the implementation at a later date might be beneficial.
+
 Section 4: Computer Vision - Object Recognition
 
 Section 5: Time Series Analysis - Day Trading with Machine Learning
