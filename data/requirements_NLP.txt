@@ -1,0 +1,11 @@
+confection
+spacy
+thinc
+pydantic-settings
+pandas-profiling
+pydantic>=2.0
+preprocessor
+tweet-preprocessor==0.6.0
+pydot
+graphviz
+transformers==4.36.2
